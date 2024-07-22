@@ -1,20 +1,20 @@
-import { cn } from "@/lib/utils";
-import type { Metadata } from "next";
-import { Inter as FontSans, Inter } from "next/font/google";
-import Provider from "../providers/ios-pwa-splash";
-import "../styles/globals.scss";
+import { cn } from '@/lib/utils';
+import type { Metadata } from 'next';
+import { Inter as FontSans, Inter } from 'next/font/google';
+import Provider from '../providers/ios-pwa-splash';
+import '../styles/globals.scss';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
+  subsets: ['latin'],
+  variable: '--font-sans',
 });
 
 export const metadata: Metadata = {
-  title: "امضا",
-  description: "امضا",
-  manifest: "/manifest.json",
+  title: 'امضا',
+  description: 'امضا',
+  manifest: '/manifest.json',
 };
 
 export default function RootLayout({
@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fa" dir="rtl" suppressHydrationWarning>
+    <html lang="fa" dir="rtl">
       <head>
         <link
           rel="apple-touch-startup-image"
@@ -98,8 +98,8 @@ export default function RootLayout({
       </head>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          'min-h-svh bg-background font-sans antialiased',
+          fontSans.variable,
         )}
       >
         <Provider />

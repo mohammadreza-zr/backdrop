@@ -1,3 +1,5 @@
+@import './index';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,10 +12,10 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
+    --primary: #4b8dde;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary-foreground: #4b8dde;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
     --accent: 210 40% 96.1%;
@@ -66,4 +68,21 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.map {
+  height: calc(100dvh - 48px);
+}
+.article {
+  box-shadow: 0px 1px 4px 0px #00000040;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.suggestion {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.76) 0%,
+    #ffffff 100%
+  );
 }

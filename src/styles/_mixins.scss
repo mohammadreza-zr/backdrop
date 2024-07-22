@@ -1,0 +1,140 @@
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-align {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-row-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin simple-button {
+  outline: none !important;
+  border: none;
+  background-color: transparent;
+}
+
+@mixin disable-select {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+@mixin absolute-center($top: 50%, $left: 50%) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate(-$top, -$left);
+}
+
+@mixin button($bcolor, $url, $x1, $y1, $bor, $col) {
+  background: $bcolor;
+  -webkit-mask: url($url);
+  mask: url($url);
+  -webkit-mask-size: $x1 $y1;
+  mask-size: $x1 $y1;
+  border: $bor;
+  color: $col;
+}
+
+//************************* Responsive **************************
+@mixin screen-2xs-min {
+  @media (min-width: 381px) {
+    @content;
+  }
+}
+@mixin screen-2xs {
+  @media (max-width: 380px) {
+    @content;
+  }
+}
+
+@mixin screen-xs-min {
+  @media (min-width: 481px) {
+    @content;
+  }
+}
+@mixin screen-xs {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin screen-sm-min {
+  @media (min-width: 641px) {
+    @content;
+  }
+}
+@mixin screen-sm {
+  @media (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin screen-md-min {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin screen-md {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin screen-lg-min {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+@mixin screen-lg {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin screen-xl-min {
+  @media (min-width: 1281px) {
+    @content;
+  }
+}
+@mixin screen-xl {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin screen-2xl-min {
+  @media (min-width: 1537px) {
+    @content;
+  }
+}
+@mixin screen-2xl {
+  @media (max-width: 1536px) {
+    @content;
+  }
+}
