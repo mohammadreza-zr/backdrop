@@ -36,50 +36,50 @@ const Home = () => {
     [],
   );
 
-  useEffect(() => {
-    window.addEventListener('wheel', (e) => {
-      const { scrollTop, clientHeight, scrollHeight } = containerRef.current;
+  //   useEffect(() => {
+  //     window.addEventListener('wheel', (e) => {
+  //       const { scrollTop, clientHeight, scrollHeight } = containerRef.current;
 
-      //   if (scrollTop === 0) {
-      //     if (!isAtTop) {
-      //       setIsAtTop(true);
-      //     }
-      //     if (elementPosition === 'top') {
-      //       setElementPosition('center');
-      //     } else if (elementPosition === 'center') {
-      //       setElementPosition('bottom');
-      //     }
-      //   } else {
-      //     setElementPosition('top');
-      //     if (isAtTop) {
-      //       setIsAtTop(false);
-      //     }
-      //   }
-    });
-    window.addEventListener('touchmove', (e) => {
-      const { scrollTop, clientHeight, scrollHeight } = containerRef.current;
+  //       //   if (scrollTop === 0) {
+  //       //     if (!isAtTop) {
+  //       //       setIsAtTop(true);
+  //       //     }
+  //       //     if (elementPosition === 'top') {
+  //       //       setElementPosition('center');
+  //       //     } else if (elementPosition === 'center') {
+  //       //       setElementPosition('bottom');
+  //       //     }
+  //       //   } else {
+  //       //     setElementPosition('top');
+  //       //     if (isAtTop) {
+  //       //       setIsAtTop(false);
+  //       //     }
+  //       //   }
+  //     });
+  //     window.addEventListener('touchmove', (e) => {
+  //       const { scrollTop, clientHeight, scrollHeight } = containerRef.current;
 
-      //   if (scrollTop === 0) {
-      //     if (!isAtTop) {
-      //       setIsAtTop(true);
-      //     }
-      //     if (elementPosition === 'top') {
-      //       setElementPosition('center');
-      //     } else if (elementPosition === 'center') {
-      //       setElementPosition('bottom');
-      //     }
-      //   } else {
-      //     setElementPosition('top');
-      //     if (isAtTop) {
-      //       setIsAtTop(false);
-      //     }
-      //   }
-    });
-    return () => {
-      window.removeEventListener('wheel', () => {});
-      window.removeEventListener('touchmove', () => {});
-    };
-  }, [elementPosition]);
+  //       //   if (scrollTop === 0) {
+  //       //     if (!isAtTop) {
+  //       //       setIsAtTop(true);
+  //       //     }
+  //       //     if (elementPosition === 'top') {
+  //       //       setElementPosition('center');
+  //       //     } else if (elementPosition === 'center') {
+  //       //       setElementPosition('bottom');
+  //       //     }
+  //       //   } else {
+  //       //     setElementPosition('top');
+  //       //     if (isAtTop) {
+  //       //       setIsAtTop(false);
+  //       //     }
+  //       //   }
+  //     });
+  //     return () => {
+  //       window.removeEventListener('wheel', () => {});
+  //       window.removeEventListener('touchmove', () => {});
+  //     };
+  //   }, [elementPosition]);
 
   useEffect(() => {
     setTimeout(() => {
