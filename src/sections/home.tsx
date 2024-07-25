@@ -142,7 +142,7 @@ const Home = () => {
             maxHeight: '100%',
             transitionDuration: '700ms',
             animationName: 'centerPosition',
-            animationDuration: '700ms',
+            animationDuration: '500ms',
           },
           bottom: {
             top: `calc(100% - ${footerHeight}px)`,
