@@ -18,6 +18,8 @@ const Home = () => {
   const [elementPosition, setElementPosition] = useState<
     'top' | 'center' | 'bottom' | 'fixed-top'
   >('center');
+  const [isClicked, setIsClicked] = useState(false);
+
   const containerRef = useRef<HTMLDivElement>(null);
   const timeOut = useRef<boolean>(false);
   const { scrollY } = useScroll({
@@ -153,6 +155,8 @@ const Home = () => {
           },
         }}
         animate={elementPosition}
+        drag={isClicked ? 'y' : false}
+        dragMomentum={false}
       >
         <div
           className="sticky top-0 z-50 grid h-9 w-full place-content-center justify-center bg-mainGray"
@@ -165,21 +169,33 @@ const Home = () => {
             const touch = e.touches[0];
             const elementRect = document.body.getBoundingClientRect();
             const touchY = touch.clientY;
+            if (containerRef.current) {
+              containerRef.current.style.overflowY = 'hidden';
+            }
 
             const elementMidY = elementRect.top + elementRect.height / 2;
 
-            if (touchY < elementMidY) {
-              if (
-                elementPosition === 'top' ||
-                elementPosition === 'fixed-top'
-              ) {
-                setElementPosition('center');
-              }
-            } else {
-              if (elementPosition === 'bottom') {
-                setElementPosition('center');
-              }
+            // if (touchY < elementMidY) {
+            //   if (
+            //     elementPosition === 'top' ||
+            //     elementPosition === 'fixed-top'
+            //   ) {
+            //     setElementPosition('center');
+            //   }
+            // } else {
+            //   if (elementPosition === 'bottom') {
+            //     setElementPosition('center');
+            //   }
+            // }
+          }}
+          onTouchEnd={() => {
+            if (containerRef.current) {
+              containerRef.current.style.overflowY = 'auto';
             }
+            setIsClicked(false);
+          }}
+          onTouchStart={() => {
+            setIsClicked(true);
           }}
         >
           <div className="h-1 w-14 rounded-sm bg-[#D9D9D9] transition-opacity duration-200"></div>
